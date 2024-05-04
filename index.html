@@ -8,6 +8,30 @@
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <!-- Custom CSS -->
   <style>
+    /* Custom animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    @keyframes typeWriter {
+      from {
+        width: 0;
+      }
+    }
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
     /* tambahkan gaya kustom di sini jika diperlukan */
     body {
       font-family: 'Poppins', sans-serif;
@@ -48,43 +72,43 @@
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-md-8 col-lg-6">
-        <div class="text-center">
+        <div class="text-center" style="animation: fadeInUp 1s;">
           <h1 class="mt-5" style="color: #007bff;">Undangan Pernikahan</h1>
-          <p class="lead">Kami mengundang Anda untuk merayakan momen spesial kami</p>
-          <hr>
+          <p class="lead" style="animation: fadeInUp 1s;">Kami mengundang Anda untuk merayakan momen spesial kami</p>
+          <hr style="animation: fadeInUp 1s;">
         </div>
         <div class="card">
           <div class="card-body">
-            <h2 class="mb-3">Detail Acara</h2>
-            <p>Tanggal: 12 Agustus 2024</p>
-            <p>Waktu: Pukul 10.00 WIB</p>
-            <p>Tempat: [Nama Tempat]</p>
+            <h2 class="mb-3" style="animation: fadeInUp 1s;">Detail Acara</h2>
+            <p style="animation: fadeInUp 1s;">Tanggal: 12 Agustus 2024</p>
+            <p style="animation: fadeInUp 1s;">Waktu: Pukul 10.00 WIB</p>
+            <p style="animation: fadeInUp 1s;">Tempat: [Nama Tempat]</p>
           </div>
         </div>
-        <div class="text-center">
+        <div class="text-center" style="animation: fadeInUp 1s;">
           <div id="countdown"></div>
         </div>
         <div class="card">
           <div class="card-body">
-            <h2 class="mb-3">Konfirmasi Kehadiran</h2>
+            <h2 class="mb-3" style="animation: fadeInUp 1s;">Konfirmasi Kehadiran</h2>
             <form>
               <div class="form-group">
                 <label for="nama">Nama:</label>
-                <input type="text" class="form-control" id="nama" placeholder="Masukkan Nama">
+                <input type="text" class="form-control" id="nama" placeholder="Masukkan Nama" style="animation: fadeInUp 1s;">
               </div>
               <div class="form-group">
                 <label for="email">Email:</label>
-                <input type="email" class="form-control" id="email" placeholder="Masukkan Email">
+                <input type="email" class="form-control" id="email" placeholder="Masukkan Email" style="animation: fadeInUp 1s;">
               </div>
               <div class="form-group">
                 <label for="konfirmasi">Konfirmasi Kehadiran:</label>
-                <select class="form-control" id="konfirmasi">
+                <select class="form-control" id="konfirmasi" style="animation: fadeInUp 1s;">
                   <option>Ya, pasti akan hadir</option>
                   <option>Mungkin akan hadir</option>
                   <option>Maaf, tidak bisa hadir</option>
                 </select>
               </div>
-              <button type="submit" class="btn btn-primary btn-block">Konfirmasi</button>
+              <button type="submit" class="btn btn-primary btn-block" style="animation: fadeInUp 1s; animation-delay: 0.5s;" onmouseover="this.style.animation='bounce 0.5s infinite'" onmouseout="this.style.animation='none'">Konfirmasi</button>
             </form>
           </div>
         </div>
@@ -95,11 +119,6 @@
   <!-- Bootstrap JS (Optional) -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  <!-- Konfetti JS -->
-  <script src="https://cdn.jsdelivr.net/npm/konva"></script>
-  <script src="https://cdn.jsdelivr.net/npm/konva-node"></script>
-  <script src="https://cdn.jsdelivr.net/npm/konva/konva.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
   <!-- Countdown JS -->
   <script>
     // Set the date we're counting down to
@@ -129,27 +148,6 @@
         document.getElementById("countdown").innerHTML = "Waktu acara sudah berakhir";
       }
     }, 1000);
-
-    // Function to create confetti
-    function createConfetti() {
-      // Right confetti
-      confetti({
-        particleCount: 100,
-        spread: 100,
-        origin: { x: 1 }
-      });
-      // Left confetti
-      confetti({
-        particleCount: 100,
-        spread: 100,
-        origin: { x: 0 }
-      });
-    }
-
-    // Call the function when the page is loaded
-    window.onload = function() {
-      createConfetti();
-    };
   </script>
 </body>
 </html>
