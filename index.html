@@ -31,6 +31,14 @@
     .card h2 {
       color: #333333;
     }
+    #countdown {
+      background-color: #001f3f; /* biru navy */
+      color: white; /* teks putih */
+      font-weight: bold; /* teks tebal */
+      padding: 10px; /* padding */
+      border-radius: 5px; /* radius sudut */
+      margin-bottom: 20px;
+    }
   </style>
   <!-- Google Fonts - Poppins -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
@@ -51,9 +59,10 @@
             <p>Tanggal: 12 Agustus 2024</p>
             <p>Waktu: Pukul 10.00 WIB</p>
             <p>Tempat: [Nama Tempat]</p>
-            <hr>
-            <div id="countdown"></div>
           </div>
+        </div>
+        <div class="text-center">
+          <div id="countdown"></div>
         </div>
         <div class="card">
           <div class="card-body">
@@ -106,7 +115,7 @@
       var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
       // Display the countdown
-      document.getElementById("countdown").innerHTML = "Waktu tersisa: " + days + " hari " + hours + " jam "
+      document.getElementById("countdown").innerHTML = days + " hari " + hours + " jam "
       + minutes + " menit " + seconds + " detik ";
 
       // If the countdown is over, display message
