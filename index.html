@@ -95,6 +95,11 @@
   <!-- Bootstrap JS (Optional) -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <!-- Konfetti JS -->
+  <script src="https://cdn.jsdelivr.net/npm/konva"></script>
+  <script src="https://cdn.jsdelivr.net/npm/konva-node"></script>
+  <script src="https://cdn.jsdelivr.net/npm/konva/konva.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.0.1/confetti.min.js"></script>
   <!-- Countdown JS -->
   <script>
     // Set the date we're counting down to
@@ -124,6 +129,27 @@
         document.getElementById("countdown").innerHTML = "Waktu acara sudah berakhir";
       }
     }, 1000);
+
+    // Function to create confetti
+    function createConfetti() {
+      // Right confetti
+      confetti({
+        particleCount: 100,
+        spread: 100,
+        origin: { x: 1 }
+      });
+      // Left confetti
+      confetti({
+        particleCount: 100,
+        spread: 100,
+        origin: { x: 0 }
+      });
+    }
+
+    // Call the function when the page is loaded
+    window.onload = function() {
+      createConfetti();
+    };
   </script>
 </body>
 </html>
